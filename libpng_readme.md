@@ -13,5 +13,8 @@ snyk test --org=demo_high --unmanaged --max-depth=20 ./downloads/libpng-1.6.37.t
 # アーカイブ ファイル を展開
 tar -xf ../downloads/libpng-1.6.37.tar.gz
 
+# 展開後の Directory に cd
+cd libpng-1.6.37
+
 # 展開した ソースコードに対して、SBOMコマンドを実行
 snyk sbom --unmanaged --org=demo_high --format=spdx2.3+json | python3 -m json.tool | tee ../snyk_unmanaged_sbom_libpng1.6.37.spdx.json
