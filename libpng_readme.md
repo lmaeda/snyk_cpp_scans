@@ -4,6 +4,9 @@ https://sourceforge.net/projects/libpng/files/libpng16/1.6.37/
 # アーカイブファイル に対して スキャン
 snyk test --org=demo_high --unmanaged --max-depth=20 ./downloads/libpng-1.6.37.tar.gz --print-dep-paths
 
+# アーカイブファイル に対して monitor (監視)
+snyk monitor --org=demo_high --unmanaged --max-depth=20 ./downloads/libpng-1.6.37.tar.gz --print-dep-paths
+
 # アーカイブファイル に対して スキャン、結果をJSON出力
 snyk test --org=demo_high --unmanaged --max-depth=20 ./downloads/libpng-1.6.37.tar.gz --print-dep-paths --json | tee ./snyk_unmanaged_libpng1.6.37_json_test_20241210.json
 
